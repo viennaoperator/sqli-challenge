@@ -5,18 +5,14 @@ The docker container contains following exploit:
 https://www.exploit-db.com/exploits/40804/
 
 ## Requirements
--Docker installed
--Docker Compose installed
+1. Docker installed
+2. Docker Compose installed
 
 ## Quick-Start
-Clone Git Repository and switch to the Repository-Folder.
-```
-docker-compose up
-```
-After running
-```
-docker-compose down
-```
+1. Clone Git Repository and switch to the Repository-Folder.
+2. `docker-compose up`
+
+To shut the challenge down:  `docker-compose down`
 
 ## Custom Flag
 The standard flag / solution is saved in the .env file and is 'root'.
