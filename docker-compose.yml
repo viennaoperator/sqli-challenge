@@ -1,0 +1,25 @@
+version: '3'
+services:
+  wordpress:
+    image: viennaoperator/wordpress-for-ctf:latest
+    ports:
+      - ${CHALLENGE_PORT}:80
+    volumes:
+      - ./data:/data # for sql dump
+      - ./olimometer:/app/wp-content/plugins/olimometer # vulnerable plugin
+    environment:
+      DB_HOST: db # must match database service name
+      DB_NAME: wordpress
+      DB_PASS: ${FLAG} # must match MYSQL_ROOT_PASSWORD
+      PLUGINS: >-
+        [local]olimometer
+      SEARCH_REPLACE: localhost:8080,${CHALLENGE_URL}:${CHALLENGE_PORT} #replace string in db dump
+      SITE_URL: ${CHALLENGE_URL} #SITE URL of Wordpress
+      WEBSERVER_PORT: ${CHALLENGE_PORT}
+  db: #database service name
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${FLAG}
+volumes:
+  data:
