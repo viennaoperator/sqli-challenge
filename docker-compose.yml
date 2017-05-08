@@ -11,7 +11,7 @@ services:
       DB_HOST: db # must match database service name
       DB_NAME: wordpress
       DB_PASS: change_me # must match MYSQL_ROOT_PASSWORD
-      ADMIN_EMAIL: ${FLAG}@wordpress.com
+      ADMIN_EMAIL: flag-${FLAG}@wordpress.com
       PLUGINS: >-
         [local]olimometer
       SEARCH_REPLACE: localhost:8080,${CHALLENGE_URL}:${CHALLENGE_PORT} #replace string in db dump
