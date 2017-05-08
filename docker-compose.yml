@@ -21,6 +21,6 @@ services:
     image: mysql:5.7
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: ${FLAG}
+      MYSQL_ROOT_PASSWORD: change_me
 volumes:
   data:
