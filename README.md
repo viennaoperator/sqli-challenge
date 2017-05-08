@@ -26,4 +26,7 @@ docker-compose down
 ```
 
 # Task
-Try to exploit the website and submit the password of the 'root' user.
+Try to exploit the website and read the email address from the database.
+
+# Use for production
+Change the password of the installation in the docker-compose.yml
